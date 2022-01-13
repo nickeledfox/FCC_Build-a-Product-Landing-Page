@@ -1,0 +1,38 @@
+{
+  "name": "fcc_responsive-web-design-projects",
+  "version": "1.0.0",
+  "description": "Free Code Camp Responsive Web Design Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mia-7-7/FCC_Responsive-Web-Design-Projects.git"
+  },
+  "keywords": [],
+  "author": "mia-7-7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mia-7-7/FCC_Build-a-Product-Landing-Page/issues"
+  },
+  "homepage": "https://github.com/mia-7-7/FCC_Build-a-Product-Landing-Page#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-uglify-es": "^2.0.0",
+    "sass": "^1.35.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,57 @@
+@use 'breakpoints' as var;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-sp-bt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin transition {
+  transition: all 0.3s ease 0s;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+//  Mixin to manage responsive breakpoints
+// @author Kitty Giraudel
+// @param {String} $breakpoint - Breakpoint name
+// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key(var.$breakpoints, $breakpoint) {
+    @media #{inspect(map-get(var.$breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys(var.$breakpoints)}.";
+  }
+}

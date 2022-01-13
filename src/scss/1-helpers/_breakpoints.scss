@@ -1,0 +1,27 @@
+$containerWidth: 1070;
+$container-padding: 1em;
+$container-max-width: $containerWidth + $container-padding + px;
+
+$breakpoints: (
+  "xxs": (
+    max-width: 478.8px,
+  ),
+  "xs": (
+    min-width: 479.98px,
+  ),
+  "sm": (
+    min-width: 591.98px,
+  ),
+  "med": (
+    min-width: 767.98px,
+  ),
+  "med2": (
+    min-width: 991.98px,
+  ),
+  "lg": (
+    min-width: 1339.98px,
+  ),
+  "xl": (
+    min-width: 1800px,
+  ),
+) !default;
