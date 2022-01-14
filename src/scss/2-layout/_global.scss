@@ -17,11 +17,11 @@
 }
 
 ::-moz-selection {
-  background: color.$accent;
+  background: #47be6965;
 }
 
 ::selection {
-  background: color.$accent;
+  background: #47be6965;
   color: #fff;
 }
 
@@ -178,6 +178,13 @@ h6 {
   font-weight: 700;
   @include flex-center-horiz;
   cursor: pointer;
+  @include transition;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #1c84b8;
+    }
+  }
 
   @include respond-to("med2") {
     width: 60%;
