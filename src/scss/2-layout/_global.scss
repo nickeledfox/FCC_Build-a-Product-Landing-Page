@@ -1,6 +1,8 @@
 @use '1-helpers/breakpoints' as var;
+@use '1-helpers/mixins' as *;
+@use '1-helpers/functions' as *;
 @use '1-helpers/colors' as color;
-@use '2-layout/typography' as font;
+@use 'typography' as f;
 
 * {
   padding: 0;
@@ -63,15 +65,14 @@ body {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
-  line-height: font.$line-height;
-  font-size: font.$font-size-main;
-  font-weight: font.$font-weight;
-  font-family: font.$ff-primary;
+  line-height: f.$line-height;
+  font-size: f.$font-size-main;
+  font-weight: f.$font-weight;
+  font-family: f.$ff-primary;
   color: color.$fc-main;
   background: color.$background;
-
   // background: radial-gradient(#004d91, #000828);
-  // filter: drop-shadow(0 3px 22px rgba(0, 0, 0, 0.231));
+  filter: drop-shadow(0 3px 22px rgba(0, 0, 0, 0.231));
 
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -126,5 +127,127 @@ h6 {
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
+  }
+}
+
+//************* utilities
+.container {
+  max-width: var.$containerWidth;
+  padding: var.$container-padding;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond-to("xs") {
+    @include flex-center-column;
+    width: 97vw;
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.robot {
+  color: color.$fc-secondary;
+  text-transform: uppercase;
+  font-family: f.$ff-secondary;
+  font-size: toRem(28);
+}
+
+.span {
+  color: color.$accent;
+}
+
+.title {
+  @extend .robot;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: toRem(25);
+
+  @include respond-to("med2") {
+    font-size: toRem(34);
+    line-height: toRem(48.5);
+  }
+}
+
+.btn {
+  background-color: color.$accent;
+  border-radius: toRem(10);
+  text-transform: uppercase;
+  padding: toRem(13);
+  font-weight: 700;
+  @include flex-center-horiz;
+  cursor: pointer;
+
+  @include respond-to("med2") {
+    width: 60%;
+    letter-spacing: 0.2rem;
+  }
+}
+
+.mid-title {
+  color: color.$fc-secondary;
+  font-weight: 700;
+  line-height: 24px;
+  font-size: toRem(22);
+}
+
+//************* columns
+.column-container {
+  @include flex-center-vert;
+  flex-direction: column;
+}
+
+.column {
+  font-size: 1rem;
+  background-color: color.$accent-darck;
+  margin-bottom: 1.6rem;
+  padding: 1.7rem 2em;
+  border-radius: 0.76rem;
+  box-shadow: 0px 0px 40px 0px #00000080;
+  width: 100%;
+}
+
+.top-col {
+  @include respond-to("med2") {
+    height: 370px !important;
+  }
+}
+
+.column-title {
+  font-size: toRem(30);
+  letter-spacing: 0.2rem;
+}
+
+.column-subtitle {
+  border-bottom: 1px solid color.$fc-secondary;
+  padding-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.column-content {
+  font-weight: 300;
+  margin-top: 1.6rem;
+  color: rgba(255, 255, 255, 0.856);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  @include respond-to("med2") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: toRem(122);
+  }
+}
+
+.grid-on-lg {
+  @include respond-to("med2") {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.7rem;
   }
 }

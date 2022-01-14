@@ -21,75 +21,80 @@ body
               a.nav-link(href="#connect").i.ib.icon-wallet 
             li
               a.nav-link(href="#question").i.ib.icon-question
-            li
-              a.nav-link(href="#question").i.ib.icon-question
 
     section.hero
       img(src="src/assets/immages/Mask_Group_9.png", alt="background immage").top-right.absolute
       img(src="src/assets/immages/Mask_Group_32.svg", alt="background immage").top-left.absolute
-      img(src="src/assets/immages/Mask_Group_33.png", alt="background immage").right-bottom.absolute
-      img(src="src/assets/immages/clown.png", alt="banner immage").hero-bg-img
-      .hero-logo
-        img(src="src/assets/immages/logo.png", alt="company logo")
-      .hero-content
-        h1#title
-          span.robot first nfts 
-          | on the Internet Computer
-        p 10,000 randomly generated, unique collectible clowns with proof of ownership stored on the Internet Computer blockchain. Created as a reference to a meme comparing the Internet Computer token (ICP) with the Insane Clown Posse - an American hip hop duo founded in 1989.
-        a(href="#")#connect.hero-content-btn.btn Connect your wallet
+      img(src="src/assets/immages/Mask_Group_33.png", alt="background immage").left-bottom.absolute
+
+      .hero-main-container
+        .hero-main-content
+          img.hero-logo(src="src/assets/immages/logo.png", alt="company logo")
+          .hero-content
+            h1#title
+              span.robot first nfts 
+              | on the Internet Computer
+            p 10,000 randomly generated, unique collectible clowns with proof of ownership stored on the Internet Computer blockchain. Created as a reference to a meme comparing the Internet Computer token (ICP) with the Insane Clown Posse - an American hip hop duo founded in 1989.
+            a(href="#")#connect.hero-content-btn.btn Connect your wallet
+        .hero-main-bg-img
+          img.hero-bg-img(src="src/assets/immages/clown.png", alt="banner immage")
 
     main.clamed
         h2.title As we progress with how many ICPunks are given away, we have something special for you:
-        .column-container
-          .column
+        .column-container.grid-on-lg
+          .column.top-col
             h3.column-title.mid-title 20%
             p.column-subtitle.mid-title clamed
             p.column-content We send ICPunks to Dfinity team that helped us launch the project and supported us along the way.
 
-          .column
+          .column.top-col
             h3.column-title.mid-title 40%
             p.column-subtitle.mid-title clamed
             p.column-content We send ICPunks to influencers and supporters that helped us promote the project.
 
-          .column
+          .column.top-col
             h3.column-title.mid-title 60%
             p.column-subtitle.mid-title clamed
             p.column-content We send a free NFT to everyone who claimed an ICPunk!
 
-          .column
+          .column.top-col
             h3.column-title.mid-title 80%
             p.column-subtitle.mid-title clamed
             p.column-content We release a guide to rare ICPunks - check how valuable is your punk!
 
-          .column
+          .column.top-col
             h3.clamed-column-title.mid-title 100%
-            p.clamed-column-subtitle.mid-title clamed
+            p.column-subtitle.mid-title clamed
             p.column-content It’s a success! We launch a simple page to exchange your clowns with others.
 
     section#question.plan
       h2.title We also plan the future after all punks will be claimed:
-      img(src="src/assets/immages/Mask_Group_36.png")#sambrero
-      .column-container
-        .column
-          p.mid-title Q3 2021: 
-          p.column-content Launch the ICPunks marketplace where you can trade, buy and sell your ICPunks for ICP tokens.
-        .column
-          p.mid-title Q4 2021: 
-          p.column-content Open the ICPunks marketplace to other NFTs, and launch the first NFT marketplace on Internet Computer. New small collection will be distributed to our supporters!
-        .column
-          p.mid-title Q1 2021: 
-          p.column-content Start experimenting with crosschain solutions, so that you can bring your favorite NFTs to Internet Computer from Ethereum or Binance Smart Chain.
+      .grid-container
+        .grid-col
+          img(src="src/assets/immages/Mask_Group_36.png")#sambrero
+        .column-container.grid-col
+          .column
+            p.mid-title Q3 2021: 
+            p.column-content Launch the ICPunks marketplace where you can trade, buy and sell your ICPunks for ICP tokens.
+          .column
+            p.mid-title Q4 2021: 
+            p.column-content Open the ICPunks marketplace to other NFTs, and launch the first NFT marketplace on Internet Computer. New small collection will be distributed to our supporters!
+          .column
+            p.mid-title Q1 2021: 
+            p.column-content Start experimenting with crosschain solutions, so that you can bring your favorite NFTs to Internet Computer from Ethereum or Binance Smart Chain.
           
     article.video-container
         h2.title How to get your 
-          span.span|FREE ICPUNKS  
-        iframe#video(
-          width='320',
-          height='220', 
-          src='https://www.youtube.com/embed/GRthtBAbdig',
-          frameborder="0",
-          allowfullscreen
-          )
+          span.span|FREE ICPUNKS:
+        .flex-container 
+          .flex-item
+            iframe#video(
+              width='320',
+              height='220', 
+              src='https://www.youtube.com/embed/GRthtBAbdig',
+              frameborder="0",
+              allowfullscreen
+              )
 
   section.form-container
     .container
