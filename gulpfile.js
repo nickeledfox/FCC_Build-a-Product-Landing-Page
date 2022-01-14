@@ -5,7 +5,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const htmlmin = require("gulp-htmlmin");
 const ttf2woff = require("gulp-ttf2woff");
-const ttf2woff2 = require("gulp-ttf2woff2");
 const del = require("del");
 const concat = require("gulp-concat");
 const pug = require("gulp-pug");
@@ -69,15 +68,6 @@ const fonts = () => {
     .pipe(ttf2woff2())
     .pipe(dest("src/assets/fonts"));
 };
-
-// *************************************************
-//     almost never need use as a task
-// *************************************************
-// gulp.task("otf2ttf", function () {
-//   return src(["src/assets" + "/fonts/*.otf"])
-//     .pipe(fonter({ formats: ["ttf"] }))
-//     .pipe(dest("dist/assets/fonts"));
-// });
 
 const clean = () => {
   return del("dist");
