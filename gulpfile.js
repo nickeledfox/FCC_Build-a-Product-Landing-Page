@@ -8,6 +8,9 @@ const ttf2woff = require("gulp-ttf2woff");
 const del = require("del");
 const concat = require("gulp-concat");
 const pug = require("gulp-pug");
+const webpackStream = require("webpack-stream");
+const uglify = require("gulp-uglify-es").default;
+const babel = require("gulp-babel");
 
 const browsersync = () => {
   browserSync.init({
@@ -44,6 +47,25 @@ const styles = () => {
       autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true })
     )
     .pipe(dest("dist/css"))
+    .pipe(browserSync.stream());
+};
+
+const scripts = () => {
+  return src("src/js/index.js")
+    .pipe(
+      webpackStream({
+        output: {
+          filename: "main.min.js",
+        },
+      })
+    )
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(uglify())
+    .pipe(dest("dist/js"))
     .pipe(browserSync.stream());
 };
 
@@ -88,6 +110,7 @@ const watching = () => {
   watch(["src/scss/**/*.scss"], styles);
   watch(["src/*.html"], pughtml).on("change", browserSync.reload);
   watch(["src/pug/**/*.pug"], pughtml).on("change", browserSync.reload);
+  watch(["src/js/**/*.js", "!app/js/main.min.js"], scripts);
 };
 
 exports.fonts = fonts;
@@ -97,6 +120,7 @@ exports.images = images;
 exports.clean = clean;
 exports.browsersync = browsersync;
 exports.pughtml = pughtml;
+exports.scripts = scripts;
 
 exports.build = series(clean, images, pughtml, build, fonts);
-exports.default = parallel(styles, browsersync, watching);
+exports.default = parallel(styles, scripts, browsersync, watching);
