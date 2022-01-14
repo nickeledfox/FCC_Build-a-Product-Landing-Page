@@ -10,7 +10,6 @@ const concat = require("gulp-concat");
 const pug = require("gulp-pug");
 const webpackStream = require("webpack-stream");
 const uglify = require("gulp-uglify-es").default;
-const babel = require("gulp-babel");
 
 const browsersync = () => {
   browserSync.init({
@@ -57,11 +56,6 @@ const scripts = () => {
         output: {
           filename: "main.min.js",
         },
-      })
-    )
-    .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
       })
     )
     .pipe(uglify())
