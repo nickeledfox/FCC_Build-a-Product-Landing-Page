@@ -5,10 +5,11 @@ const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const htmlmin = require("gulp-htmlmin");
 const ttf2woff = require("gulp-ttf2woff");
-const ttf2woff2 = require("gulp-ttf2woff2");
 const del = require("del");
 const concat = require("gulp-concat");
 const pug = require("gulp-pug");
+const webpackStream = require("webpack-stream");
+const uglify = require("gulp-uglify-es").default;
 
 const browsersync = () => {
   browserSync.init({
@@ -48,6 +49,20 @@ const styles = () => {
     .pipe(browserSync.stream());
 };
 
+const scripts = () => {
+  return src("src/js/**/*.js")
+    .pipe(
+      webpackStream({
+        output: {
+          filename: "main.min.js",
+        },
+      })
+    )
+    .pipe(uglify())
+    .pipe(dest("dist/js"))
+    .pipe(browserSync.stream());
+};
+
 const images = () => {
   return src("src/assets/images/**/*")
     .pipe(
@@ -70,15 +85,6 @@ const fonts = () => {
     .pipe(dest("src/assets/fonts"));
 };
 
-// *************************************************
-//     almost never need use as a task
-// *************************************************
-// gulp.task("otf2ttf", function () {
-//   return src(["src/assets" + "/fonts/*.otf"])
-//     .pipe(fonter({ formats: ["ttf"] }))
-//     .pipe(dest("dist/assets/fonts"));
-// });
-
 const clean = () => {
   return del("dist");
 };
@@ -98,6 +104,7 @@ const watching = () => {
   watch(["src/scss/**/*.scss"], styles);
   watch(["src/*.html"], pughtml).on("change", browserSync.reload);
   watch(["src/pug/**/*.pug"], pughtml).on("change", browserSync.reload);
+  watch(["src/js/**/*.js", "!app/js/main.min.js"], scripts);
 };
 
 exports.fonts = fonts;
@@ -107,6 +114,7 @@ exports.images = images;
 exports.clean = clean;
 exports.browsersync = browsersync;
 exports.pughtml = pughtml;
+exports.scripts = scripts;
 
 exports.build = series(clean, images, pughtml, build, fonts);
-exports.default = parallel(styles, browsersync, watching);
+exports.default = parallel(styles, scripts, browsersync, watching);

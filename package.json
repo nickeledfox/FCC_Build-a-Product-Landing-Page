@@ -25,14 +25,16 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^5.0.0",
     "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify-es": "^2.0.0",
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "typeit": "^8.2.0"
   }
 }

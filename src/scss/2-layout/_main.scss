@@ -55,6 +55,7 @@
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     padding-right: 1rem;
+
     @include respond-to("xxs") {
       font-size: 1.3rem;
     }
@@ -70,8 +71,7 @@
     grid-template-columns: 60% 40%;
   }
 }
-.hero-main-content {
-}
+
 .hero-main-bg-img {
   display: flex;
   align-self: end;
@@ -88,7 +88,7 @@
     padding: 0;
   }
 
-  // hero bg immages
+  // hero bg images
   .top-right {
     width: toRem(110);
     top: 5rem;
@@ -142,7 +142,7 @@
       display: block;
       width: 641px;
       position: absolute;
-      bottom: -3rem;
+      bottom: -5rem;
       left: 50%;
     }
   }
@@ -220,6 +220,10 @@
 
   .title {
     margin-bottom: 2rem;
+
+    @include respond-to("med2") {
+      margin: 5rem 0 3rem 0;
+    }
   }
 }
 
@@ -240,7 +244,7 @@
   background: radial-gradient(#004d91, #000828);
 
   filter: drop-shadow(0 3px 22px rgba(0, 0, 0, 0.231));
-  // background: color.$background-2;
+  background: color.$background-2;
 
   .title {
     margin: toRem(128) 0 1rem 0;
@@ -329,10 +333,6 @@
 
   &::placeholder {
     padding-left: 3px;
-  }
-
-  @include respond-to("med2") {
-    // width: 120%;
   }
 }
 

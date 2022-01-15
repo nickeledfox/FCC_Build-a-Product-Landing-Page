@@ -38,18 +38,20 @@
   @include transition;
   @media (any-hover: hover) {
     &:hover:before {
-      color: color.$fc-secondary;
+      color: #44ee44;
     }
   }
 }
 
 .ib {
+  @include transition;
   @media (any-hover: hover) {
     &:hover:before {
       color: color.$accent;
     }
   }
 }
+
 .icon-question {
   &:before {
     content: $icon-question;
