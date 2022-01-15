@@ -50,7 +50,7 @@ const styles = () => {
 };
 
 const scripts = () => {
-  return src("src/js/index.js")
+  return src("src/js/**/*.js")
     .pipe(
       webpackStream({
         output: {
