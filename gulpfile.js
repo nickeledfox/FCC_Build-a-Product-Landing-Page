@@ -81,7 +81,7 @@ const images = () => {
 const fonts = () => {
   src("src/assets/fonts/**/*").pipe(ttf2woff()).pipe(dest("dist/assets/fonts"));
   return src("src/assets/fonts/**/*")
-    .pipe(ttf2woff2())
+    .pipe(ttf2woff())
     .pipe(dest("src/assets/fonts"));
 };
 
@@ -90,14 +90,9 @@ const clean = () => {
 };
 
 const build = () => {
-  return src(
-    [
-      "dist/css/style.min.css",
-      "src/assets/fonts*.woff, *.woff2",
-      "./index.html",
-    ],
-    { base: "src" }
-  ).pipe(dest("dist"));
+  return src(["dist/css/style.min.css", "src/assets/fonts/**/*"], {
+    base: "src",
+  }).pipe(dest("dist"));
 };
 
 const watching = () => {
@@ -116,5 +111,5 @@ exports.browsersync = browsersync;
 exports.pughtml = pughtml;
 exports.scripts = scripts;
 
-exports.build = series(clean, images, pughtml, build, fonts);
+exports.build = series(images, build);
 exports.default = parallel(styles, scripts, browsersync, watching);
