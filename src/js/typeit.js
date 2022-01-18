@@ -41,10 +41,10 @@ new TypeIt("#typeit-4", {
   waitUntilVisible: true,
 }).go();
 
-// input
-const element = document.querySelector("#email");
-const effect = new TypeIt(element, {
-  startDelay: 2000,
+// input animation
+const input = document.querySelector("#email");
+const effect = new TypeIt(input, {
+  startDelay: 5000,
   speed: 100,
 })
   .type("Subscribe")
@@ -57,11 +57,11 @@ const effect = new TypeIt(element, {
   })
   .type(". . .");
 
-element.addEventListener("focus", () => {
+input.addEventListener("focus", () => {
   effect.reset();
 });
 
-element.addEventListener("blur", (e) => {
+input.addEventListener("blur", (e) => {
   if (!e.target.value.length) {
     effect.go();
   }
