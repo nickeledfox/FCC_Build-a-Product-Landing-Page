@@ -14,6 +14,8 @@ This is a part of the FCC [Responsive Web Design Projects](https://www.freecodec
 - SASS(SCSS)
 - TypeIt
 
- [Live Preview:](https://mia-7-7.github.io/FCC_Build-a-Product-Landing-Page/)
+ [Click for Live view](https://mia-7-7.github.io/FCC_Build-a-Product-Landing-Page/)
 
-<a link="https://mia-7-7.github.io/FCC_Build-a-Product-Landing-Page/"><img width="400px" alt="Screen Shot 2022-01-23 at 2 04 11 AM" src="https://user-images.githubusercontent.com/81501711/150673634-aadcfc8a-e3e9-44f6-8260-350d3f2ed9f2.png"></a>
+
+<img width="400px" alt="Screen Shot 2022-01-23 at 2 04 11 AM" src="https://user-images.githubusercontent.com/81501711/150673634-aadcfc8a-e3e9-44f6-8260-350d3f2ed9f2.png">
+
