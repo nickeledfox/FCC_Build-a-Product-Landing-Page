@@ -4,7 +4,8 @@
 
 This is a part of the FCC [Responsive Web Design Projects](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
 
-[Click for Live Preview:](https://mia-7-7.github.io/FCC_Build-a-Product-Landing-Page/)
+[Click for Live Preview:](https://nickeledfox
+.github.io/FCC_Build-a-Product-Landing-Page/)
 
 <img width="100%" alt="Screen Shot 2022-02-02 at 12 38 36 PM" src="https://user-images.githubusercontent.com/81501711/152502556-eaafcac5-5ba0-4014-9192-d78e79b7f3e0.png">
 
